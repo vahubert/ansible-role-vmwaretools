@@ -16,7 +16,16 @@
   yum: name={{ vmwaretools_yum_server }}{{ vmwaretools_yum_path }}/esx/{{ vmwaretools_tools_version }}/repos/vmware-tools-repo-RHEL{{ ansible_distribution_major_version }}-{{ vmwaretools_repo_version }}.el{{ ansible_distribution_major_version }}.{{ ansible_architecture }}.rpm
   when: ansible_distribution_major_version|int <= 6
 
-- name: Disable GPG check for vmware-osps repository
+- name: Disable GPG check for vmware-osps repository (1/2)
+  ini_file:
+    path: /etc/yum.repos.d/vmware-osps.repo
+    section: vmware-tools-collection
+    option: gpgcheck
+    value: 0
+    backup: yes
+  when: ansible_distribution_major_version|int <= 6
+
+- name: Disable GPG check for vmware-osps repository (2/2)
   ini_file:
     path: /etc/yum.repos.d/vmware-osps.repo
     section: vmware-tools-collection
