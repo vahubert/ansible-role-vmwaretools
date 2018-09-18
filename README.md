@@ -39,7 +39,7 @@ None.
     - hosts: servers
       become: yes
       roles:
-         - { role: peru.vmwaretools, when: ansible_virtualization_type == 'VMware' }
+         - { role: vahubert.vmwaretools, when: ansible_virtualization_type == 'VMware' }
 
 ## License
 
