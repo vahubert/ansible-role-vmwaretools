@@ -3,7 +3,7 @@
 
 #   The version of VMware Tools to install. Possible values can be found here:
 #   http://packages.vmware.com/tools/esx/index.html
-vmwaretools_tools_version: latest
+vmwaretools_tools_version: 6.7.0
 
 #   The server which holds the YUM repository. Customize this if you mirror
 #   public YUM repos to your internal network.

@@ -1,9 +1,9 @@
 ---
 galaxy_info:
-  author: Petr Ruzicka
+  role_name: vmwaretools
+  author: Valentin HUBERT
   description: Installation of vmware-tools package and repostory
-  company: your company (optional)
-  license: license (GPLv2, CC-BY, etc)
+  license: MIT
   min_ansible_version: 1.2
   platforms:
   - name: EL
