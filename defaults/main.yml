@@ -17,3 +17,19 @@ vmwaretools_yum_path: /tools
 #   For example: 9.4.10-1 version for http://packages.vmware.com/tools/esx/latest/repos/vmware-tools-repo-RHEL6-9.4.10-1.el6.x86_64.rpm
 #   If it is not specified it's autodetected by "Get repository package version if vmwaretools_repo_version is undefined." task.
 #vmwaretools_repo_version: 8.6.16-1
+
+
+# Turns on logging globally. It can still be disabled for each domain.
+log: false
+# Disables core dumps on fatal errors; they're enabled by default.
+enableCoreDump: false
+# Defines the "vmsvc" domain, logging to file
+vmsvc_level: message
+# vmsvc.level = message
+vmsvc_handler: file
+# Setup file rotation - keep 3 files
+vmsvc_maxOldLogFiles: 3
+# Max log file size kept: 1 MB
+vmsvc_maxLogSize: 1
+# Defines the "vmtoolsd" domain, and disable logging for it.
+vmtoolsd_level: none
