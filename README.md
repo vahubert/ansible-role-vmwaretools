@@ -1,8 +1,8 @@
 # Ansible Role: vmwaretools
 
-[![Build Status](https://travis-ci.org/ruzickap/ansible-role-vmwaretools.svg?branch=master)](https://travis-ci.org/ruzickap/ansible-role-vmwaretools)
-[![Ansible Galaxy](https://img.shields.io/ansible/role/2509.svg)](https://galaxy.ansible.com/peru/vmwaretools/)
-[![Ansible Role](https://img.shields.io/ansible/role/d/2509.svg)](https://galaxy.ansible.com/peru/vmwaretools/)
+[![Build Status](https://travis-ci.org/vahubert/ansible-role-vmwaretools.svg?branch=master)](https://travis-ci.org/vahubert/ansible-role-vmwaretools)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/2509.svg)](https://galaxy.ansible.com/vahubert/vmwaretools/)
+[![Ansible Role](https://img.shields.io/ansible/role/d/2509.svg)](https://galaxy.ansible.com/vahubert/vmwaretools/)
 
 This role will help you with installing original vmware-tools from Vmware or fallback to Open VMware Tools (open-vm-tools).
 
@@ -29,6 +29,8 @@ Available variables are listed below, along with default values (see `defaults/m
     #Repository package version. For example: 9.4.10-1 version for http://packages.vmware.com/tools/esx/latest/repos/vmware-tools-repo-RHEL6-9.4.10-1.el6.x86_64.rpm
 
     vmwaretools_repo_version: 9.4.10-1
+
+    
 
 ## Dependencies
 
