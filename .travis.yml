@@ -3,8 +3,6 @@ sudo: required
 
 env:
   - distribution: centos
-    version: 6
-  - distribution: centos
     version: 7
   - distribution: fedora
     version: 26
@@ -34,7 +32,12 @@ script:
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-galaxy install /etc/ansible/roles/nginx_role/travis/requirements.yml'
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -i /etc/ansible/roles/nginx_role/inventory -v /etc/ansible/roles/nginx_role/travis/test.yml --syntax-check'
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -i /etc/ansible/roles/nginx_role/inventory -v /etc/ansible/roles/nginx_role/travis/test.yml'
-
+  - >
+    sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/nginx_role/travis/test.yml
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
+- 'sudo docker rm -f "$(cat ${container_id})"'
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
