@@ -26,3 +26,11 @@
     when: ansible_os_family == 'Debian'
   roles:
     - vahubert.vmwaretools
+  vars:
+    vmwaretools_tools_version: 6.5.0
+    log: true
+    enableCoreDump: true
+    vmsvc_level: message
+    vmsvc_handler: file
+    vmsvc_maxOldLogFiles: 3
+    vmsvc_maxLogSize: 1
