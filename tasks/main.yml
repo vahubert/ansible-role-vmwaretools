@@ -16,6 +16,10 @@
 - import_tasks: FreeBSD.yml
   when: ansible_os_family == 'FreeBSD'
 
+- stat:
+    path: /etc/vmwware-tools
+    state: directory
+
 - template:
     src: templates/tools.conf.j2
     dest: /etc/vmwware-tools/tools.conf
