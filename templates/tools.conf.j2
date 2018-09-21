@@ -1,21 +1,10 @@
-#### tools.conf ####
 {% if log == true %}
 [logging]
-# Turns on logging globally. It can still be disabled for each domain.
 log = {{ log }}
-
-# Disables core dumps on fatal errors; they're enabled by default.
 enableCoreDump = {{ enableCoreDump }}
-
-# Defines the "vmsvc" domain, logging to file
 vmsvc.level = {{ vmsvc_level }}
 vmsvc.handler = {{ vmsvc_handler }}
-# Setup file rotation - keep 3 files
 vmsvc.maxOldLogFiles = {{ vmsvc-maxOldLogFiles }}
-# Max log file size kept: 1 MB
 vmsvc.maxLogSize = {{ vmsvc_maxLogSize }}
-
-# Defines the "vmtoolsd" domain, and disable logging for it.
 vmtoolsd.level = {{ vmtoolsd_level  }}
-#### end of tools.conf ####
 {% endif %}
