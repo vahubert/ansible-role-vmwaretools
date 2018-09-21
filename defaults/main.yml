@@ -20,16 +20,27 @@ vmwaretools_yum_path: /tools
 
 
 # Turns on logging globally. It can still be disabled for each domain.
-log: false
+log: true
 # Disables core dumps on fatal errors; they're enabled by default.
-enableCoreDump: false
-# Defines the "vmsvc" domain, logging to file
-vmsvc_level: message
-# vmsvc.level = message
-vmsvc_handler: file
-# Setup file rotation - keep 3 files
-vmsvc_maxOldLogFiles: 3
-# Max log file size kept: 1 MB
-vmsvc_maxLogSize: 1
-# Defines the "vmtoolsd" domain, and disable logging for it.
-vmtoolsd_level: none
+# enableCoreDump: true
+
+# Enable "vmsvc" service logging to a file.
+vmsvc_level: debug
+vmsvc_handler: file+
+vmsvc_data: /tmp/vmsvc.log
+vmsvc_maxLogSize: 3
+vmsvc_facility: LOG_DAEMON
+
+# Enable new "vmusr" service logging to a file.
+vmusr_level: debug
+vmusr_handler: file+
+vmusr_data: /tmp/vmusr.log
+vmusr_maxLogSize: 3
+vmusr_facility: LOG_DAEMON
+
+# Enable the "vmvss" snapshot service logging to a file.
+vmvss_level: debug
+vmvss_handle: file+
+vmvss_data: /tmp/vmvss.log
+vmvss_maxLogSize:
+vmvss_facility: LOG_DAEMON
