@@ -22,4 +22,4 @@
 
 - template:
     src: templates/tools.conf.j2
-    dest: /etc/vmwware-tools/tools.conf
+    dest: /etc/vmware-tools/tools.conf
