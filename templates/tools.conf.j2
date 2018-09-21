@@ -1,43 +1,10 @@
+{% if log == true %}
 [logging]
 log = {{ log }}
 enableCoreDump = {{ enableCoreDump }}
-
-# Enable VMware Tools service logging to a file.
-vmtoolsd.level = {{ vmtoolsd_level }}
-vmtoolsd.handler = {{ vmtoolsd_handler }}
-{% if vmtoolsd_handler == 'file' %}
-vmtoolsd.data = {{ vmtoolsd_data }}
-vmtoolsd.maxLogSize = {{ vmtoolsd_maxLogSize }}
-{% elif vmtoolsd_handler == 'syslog'  %}
-vmtoolsd.facility = {{ vmtoolsd_facility }}
-{% endif %}
-
-# Enable "vmsvc" service logging to a file.
 vmsvc.level = {{ vmsvc_level }}
 vmsvc.handler = {{ vmsvc_handler }}
-{% if vmsvc_handler == 'file' %}
-vmsvc.data = {{ vmsvc_data }}
+vmsvc.maxOldLogFiles = {{ vmsvc_maxOldLogFiles }}
 vmsvc.maxLogSize = {{ vmsvc_maxLogSize }}
-{% elif vmsvc_handler == 'syslog'  %}
-vmsvc.facility = {{ vmsvc_facility }}
-{% endif %}
-
-# Enable new "vmusr" service logging to a file.
-vmusr.level = {{ vmusr_level }}
-vmusr.handler = {{ vmusr_handler }}
-{% if vmusr_handler == 'file' %}
-vmusr.data = {{ vmusr_data }}
-vmusr.maxLogSize = {{ vmusr_maxLogSize }}
-{% elif vmusr_handler == 'syslog'  %}
-vmusr.facility = {{ vmusr_facility }}
-{% endif %}
-
-# Enable the "vmvss" snapshot service logging to a file.
-vmvss.level = {{ vmvss_level }}
-vmvss.handler = {{ vmvss_handler }}
-{% if vmvss_handler == 'file' %}
-vmvss.data = {{ vmvss_data }}
-vmvss.maxLogSize = {{ vmvss_maxLogSize }}
-{% elif vmvss_handler == 'syslog'  %}
-vmvss.facility = {{ vmvss_facility }}
+vmtoolsd.level = {{ vmtoolsd_level  }}
 {% endif %}

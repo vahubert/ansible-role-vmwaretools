@@ -17,7 +17,7 @@
   when: ansible_os_family == 'FreeBSD'
 
 - file:
-    path: /etc/vmwware-tools
+    path: /etc/vmware-tools
     state: directory
 
 - template:
