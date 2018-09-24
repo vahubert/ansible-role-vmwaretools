@@ -3,3 +3,12 @@
 
 - name: Installing Open VMware Tools (open-vm-tools)
   apt: name=open-vm-tools state=present
+
+- template:
+    src: open-vm-tools.service.j2
+    dest: /lib/systemd/system/open-vm-tools.service
+
+- lineinfile:
+    path: /etc/sysctl.conf
+    line: 'net.ipv6.conf.all.disable_ipv6 = 1'
+    insertbefore: BOF
