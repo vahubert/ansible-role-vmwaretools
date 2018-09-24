@@ -1,10 +1,23 @@
-{% if log == true %}
 [logging]
 log = {{ log }}
 enableCoreDump = {{ enableCoreDump }}
+
+# Enable VMware Tools service logging to a file.
+vmtoolsd.level = {{ vmtoolsd_level }}
+vmtoolsd.handler = {{ vmtoolsd_handler }}
+{% if vmtoolsd_handler == 'file' %}
+vmtoolsd.data = {{ vmtoolsd_data }}
+vmtoolsd.maxLogSize = {{ vmtoolsd_maxLogSize }}
+{% elif vmtoolsd_handler == 'syslog'  %}
+vmtoolsd.facility = {{ vmtoolsd_facility }}
+{% endif %}
+
+# Enable "vmsvc" service logging to a file.
 vmsvc.level = {{ vmsvc_level }}
 vmsvc.handler = {{ vmsvc_handler }}
-vmsvc.maxOldLogFiles = {{ vmsvc_maxOldLogFiles }}
+{% if vmsvc_handler == 'file' %}
+vmsvc.data = {{ vmsvc_data }}
 vmsvc.maxLogSize = {{ vmsvc_maxLogSize }}
-vmtoolsd.level = {{ vmtoolsd_level  }}
+{% elif vmsvc_handler == 'syslog'  %}
+vmsvc.facility = {{ vmsvc_facility }}
 {% endif %}
