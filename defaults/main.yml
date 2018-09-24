@@ -17,7 +17,7 @@ vmwaretools_yum_path: /tools
 #vmwaretools_repo_version: 8.6.16-1
 # Turns on logging globally. It can still be disabled for each domain.
 log: true
-
+enableCoreDump: true
 vmsvc_level: debug
 vmsvc_handler: file
 vmsvc_data: /tmp/vmsvc.log
