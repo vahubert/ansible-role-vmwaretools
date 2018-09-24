@@ -6,14 +6,8 @@ vmsvc_data: /tmp/vmsvc.log
 vmsvc_maxLogSize: 3
 vmsvc_facility: LOG_DAEMON
 # Enable new "vmusr" service logging to a file.
-vmusr_level: debug
-vmusr_handler: file
-vmusr_data: /tmp/vmusr.log
-vmusr_maxLogSize: 3
-vmusr_facility: LOG_DAEMON
-# Enable the "vmvss" snapshot service logging to a file.
-vmvss_level: debug
-vmvss_handle: file
-vmvss_data: /tmp/vmvss.log
-vmvss_maxLogSize:
-vmvss_facility: LOG_DAEMON
+vmtoolsd_level: debug
+vmtoolsd_handler: file
+vmtoolsd_data: /tmp/vmusr.log
+vmtoolsd_maxLogSize: 3
+vmtoolsd_facility: LOG_DAEMON
