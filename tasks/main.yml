@@ -23,3 +23,7 @@
 - template:
     src: templates/tools.conf.j2
     dest: /etc/vmware-tools/tools.conf
+
+- template:
+    src: templates/tools.conf.j2
+    dest: /lib/systemd/system/open-vm-tools.service
