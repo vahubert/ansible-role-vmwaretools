@@ -8,7 +8,8 @@
     src: open-vm-tools.service.j2
     dest: /lib/systemd/system/open-vm-tools.service
 
-- lineinfile:
-    path: /etc/sysctl.conf
-    line: 'net.ipv6.conf.all.disable_ipv6 = 1'
-    insertbefore: BOF
+- name: Create symbolic link for vmwaretools
+  file:
+    src: /etc/dhcp
+    dest: /etc/dhcp3
+    state: link
