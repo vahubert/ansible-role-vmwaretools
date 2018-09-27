@@ -2,9 +2,10 @@
 galaxy_info:
   role_name: vmwaretools
   author: Valentin HUBERT
-  description: Installation of vmware-tools package and repostory
+  company: "NGI HEALTHCARE IT"
+  description: Installation of vmware-tools package and repository
   license: MIT
-  min_ansible_version: 1.2
+  min_ansible_version: 2.4
   platforms:
   - name: EL
     versions:
