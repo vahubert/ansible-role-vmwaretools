@@ -35,6 +35,6 @@ notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   email:
   recipients:
-  - vhubert@ngigroup.fr
+  - valentin.hubert@groupe-nehs.com
   on_success: always
   on_failure: always
